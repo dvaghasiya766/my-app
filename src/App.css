@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: Roboto, Montserrat, Lato, Open Sans;
   transition: all 1s cubic-bezier(0.46, 0.63, 0.47, 1.07);
 }
 body {
@@ -15,6 +15,7 @@ body {
   margin: 0;
   padding: 1rem;
   color: #333;
+  height: 100vh;
 }
 .course-goals h1 {
   color: #333;
@@ -53,6 +54,9 @@ body {
 }
 /* Tablet */
 @media (max-width: 768px) {
+  body {
+    max-height: 100dvh;
+  }
   .goal-list {
     padding: 0 2rem;
   }
@@ -65,7 +69,7 @@ body {
 /* Mobile */
 @media (max-width: 480px) {
   .goal-list {
-    padding: 0 1rem;
+    padding: 5px 1rem;
   }
   .goal-list li {
     font-size: 0.95rem;
