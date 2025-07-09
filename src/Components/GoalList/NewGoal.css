@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #4caf50;
+  --primary-hover: #43a047;
+  --input-border: #ccc;
+  --input-focus: rgba(76, 175, 80, 0.4);
+  --error-color: #f44336;
+  --disabled-bg: #f0f0f0;
+  --disabled-text: #bbb;
+  --font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.new-goal-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 120px;
+}
+
+input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: var(--font);
+  background-color: #fefefe;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--input-focus);
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+  opacity: 0.9;
+}
+
+input[type="text"]:invalid {
+  border-color: var(--error-color);
+}
+
+input[type="text"]:valid {
+  border-color: var(--primary-color);
+}
+
+input[type="text"]:disabled {
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
+  border-color: var(--input-border);
+  cursor: not-allowed;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-family: var(--font);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 128, 0, 0.25);
+}
+
+button:disabled {
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Tablet Adjustments */
+@media (max-width: 768px) {
+  .new-goal-form {
+    flex-direction: column;
+    padding: 1.5rem;
+    /* margin: 0%; */
+    height: 166px;
+  }
+
+  input[type="text"],
+  button {
+    width: 100%;
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Small Mobile Devices */
+/* @media (max-width: 480px) {
+  input[type="text"] {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+} */
