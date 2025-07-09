@@ -29,7 +29,6 @@ body {
   max-height: calc(100vh - 500px);
   overflow-y: auto;
 }
-
 .goal-list li {
   background: linear-gradient(135deg, #f9f9f9, #ffffff);
   border: 1px solid #e0e0e0;
@@ -46,20 +45,17 @@ body {
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
-
 .goal-list li:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(76, 175, 80, 0.1);
   background-color: #f1fff3;
   border-left-color: var(--primary-hover);
 }
-
 /* Tablet */
 @media (max-width: 768px) {
   .goal-list {
     padding: 0 2rem;
   }
-
   .goal-list li {
     font-size: 1rem;
     padding: 0.9rem 1rem;
@@ -71,7 +67,6 @@ body {
   .goal-list {
     padding: 0 1rem;
   }
-
   .goal-list li {
     font-size: 0.95rem;
     padding: 0.75rem 0.9rem;
