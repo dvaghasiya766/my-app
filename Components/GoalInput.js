@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { View, TextInput, Button, StyleSheet, Modal } from "react-native";
+import {
+  View,
+  TextInput,
+  Button,
+  StyleSheet,
+  Modal,
+  Image,
+} from "react-native";
 
 export default function GoalInput({ onAddGoal, visible, onCancel }) {
   const [enteredGoalText, setEnteredGoalText] = useState("");
@@ -19,15 +26,19 @@ export default function GoalInput({ onAddGoal, visible, onCancel }) {
     <Modal visible={visible} animationType="slide">
       <View style={styles.modalContainer}>
         <View style={styles.inputContainer}>
+          <Image
+            source={require("../assets/goal.png")}
+            style={{ width: 100, height: 100, marginBottom: 20 }}
+          />
           <TextInput
             style={[styles.inputText, isFocused && styles.inputTextFocused]}
             placeholder="Your course goal!"
-            placeholderTextColor="#888"
+            placeholderTextColor="#fffdfdff"
             onChangeText={goalInputHandler}
             value={enteredGoalText}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            selectionColor="#6200ee"
+            selectionColor="#fffdfdff"
           />
         </View>
         <View style={styles.buttonRow}>
@@ -49,25 +60,27 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#2C1A4D", // lighter deep purple
   },
   inputContainer: {
     width: "100%",
     marginBottom: 20,
+    alignItems: "center",
   },
   inputText: {
+    width: "100%",
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#9575CD", // softer purple border
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderRadius: 8,
     fontSize: 16,
-    backgroundColor: "#fff",
-    color: "#333",
+    backgroundColor: "#3B2769", // slightly lighter input bg
+    color: "#F3E5F5", // very light lavender text
   },
   inputTextFocused: {
-    borderColor: "#6200ee",
-    backgroundColor: "#f3eaff",
+    borderColor: "#D1C4E9", // pale purple for focus
+    backgroundColor: "#4A327F", // brighter purple when focused
   },
   buttonRow: {
     flexDirection: "row",
@@ -81,3 +94,44 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
 });
+
+// const styles = StyleSheet.create({
+//   modalContainer: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//     padding: 20,
+//     backgroundColor: "#1B1030", // deep purple background
+//   },
+//   inputContainer: {
+//     width: "100%",
+//     marginBottom: 20,
+//     alignItems: "center",
+//   },
+//   inputText: {
+//     width: "100%",
+//     borderWidth: 1,
+//     borderColor: "#7E57C2", // lighter purple border
+//     paddingHorizontal: 12,
+//     paddingVertical: 10,
+//     borderRadius: 8,
+//     fontSize: 16,
+//     backgroundColor: "#2E1A47", // darker purple input bg
+//     color: "#EDE7F6", // light lavender text
+//   },
+//   inputTextFocused: {
+//     borderColor: "#B388FF", // bright purple border on focus
+//     backgroundColor: "#45245E", // slightly lighter focus background
+//   },
+//   buttonRow: {
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+//     width: "100%",
+//   },
+//   buttonWrapper: {
+//     flex: 1,
+//     marginHorizontal: 5,
+//     borderRadius: 8,
+//     overflow: "hidden",
+//   },
+// });
